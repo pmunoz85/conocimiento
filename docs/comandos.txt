@@ -1,0 +1,12 @@
+npm init
+
+npm i express cors express-fileupload express-validator sequelize mysql2 dotenv yarg socket.io
+
+ npm install eslint
+
+ ./node_modules/.bin/eslint --init
+
+ 
+//////////////////
+echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
