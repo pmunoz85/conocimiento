@@ -5,15 +5,9 @@ IMPLEMENTACIONES
 
 - Implementar la comunicación por sockets
 
-- Cambiar la base de datos MySql por PostgreSql
-
 MEJORAS
 
 - Sustituir las consultas dobles por accesos a las relaciones de Sequalize
-
-- Cambiar el servidor de bases de datos a PostgreSql, para poder subirlo a Heroku.
-
-- Deplegarlo en Heroku
 
 - Implementar el sistema de configuración de contraseñas a través del correo electrónico.
 
