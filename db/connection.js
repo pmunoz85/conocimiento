@@ -37,26 +37,6 @@ if (process.env.DATABASE_URL) {
   );
 }
 
-/*
-// Mysql
-const sequelize = new Sequelize(
-  process.env.DB,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT,
-    // logging: false,
-    // operatorsAliases: false,
-    pool: {
-      max: parseInt(process.env.DB_POOL_MAX, 10),
-      acquire: process.env.DB_POOL_ACQUIRE,
-      idle: process.env.DB_POOL_IDLE,
-    },
-  }
-);
-*/
-
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 

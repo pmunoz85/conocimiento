@@ -123,7 +123,7 @@ const resaltarTexto = (texto, array) => {
     while (posicion_ini !== -1) {
       resaltado += `${cadena.substring(
         0,
-        posicion_ini - 1
+        posicion_ini
       )}<span style="background-color: #fff933;">${cadena.substring(
         posicion_ini,
         posicion_ini + element.length
@@ -131,10 +131,10 @@ const resaltarTexto = (texto, array) => {
       cadena = cadena.substring(posicion_ini + element.length, cadena.length);
       posicion_ini = cadena.search(regEx);
     }
-    cadena = resaltado;
+    cadena = resaltado + cadena;
   }
 
-  return resaltado;
+  return cadena;
 };
 
 const resaltarTexto_ESTA_OBSOLETO = (texto, array) => {
