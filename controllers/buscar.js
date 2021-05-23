@@ -111,6 +111,33 @@ const busquedas = async (req, res) => {
 };
 
 const resaltarTexto = (texto, array) => {
+  let resaltado = '';
+  let cadena = texto;
+  let posicion_ini = -1;
+
+  for (let n = 0; n < array.length; n++) {
+    const element = array[n];
+    const regEx = new RegExp(element, 'i');
+
+    posicion_ini = cadena.search(regEx);
+    while (posicion_ini !== -1) {
+      resaltado += `${cadena.substring(
+        0,
+        posicion_ini - 1
+      )}<span style="background-color: #fff933;">${cadena.substring(
+        posicion_ini,
+        posicion_ini + element.length
+      )}</span>`;
+      cadena = cadena.substring(posicion_ini + element.length, cadena.length);
+      posicion_ini = cadena.search(regEx);
+    }
+    cadena = resaltado;
+  }
+
+  return resaltado;
+};
+
+const resaltarTexto_ESTA_OBSOLETO = (texto, array) => {
   let resaltado = texto;
 
   for (let n = 0; n < array.length; n++) {

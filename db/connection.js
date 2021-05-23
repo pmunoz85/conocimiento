@@ -1,26 +1,5 @@
 const db = {};
 const Sequelize = require('sequelize');
-/*
-// Mysql
-const sequelize = new Sequelize(
-  process.env.DB,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT,
-    // logging: false,
-    // operatorsAliases: false,
-    pool: {
-      max: parseInt(process.env.DB_POOL_MAX, 10),
-      min: parseInt(process.env.DB_POOL_MIN, 10),
-      acquire: process.env.DB_POOL_ACQUIRE,
-      idle: process.env.DB_POOL_IDLE,
-    },
-  }
-);
-*/
-
 let sequelize;
 
 if (process.env.DATABASE_URL) {
@@ -45,15 +24,38 @@ if (process.env.DATABASE_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
+      host: process.env.DB_HOST,
       dialect: process.env.DB_DIALECT,
       port: process.env.DB_PORT,
       pool: {
         max: parseInt(process.env.DB_POOL_MAX, 10),
-        idle: parseInt(process.env.DB_POOL_IDLE, 30000),
+        min: parseInt(process.env.DB_POOL_MIN, 0),
+        acquire: parseInt(process.env.DB_POOL_ACQUIRE, 30000),
+        idle: parseInt(process.env.DB_POOL_IDLE, 10000),
       },
     }
   );
 }
+
+/*
+// Mysql
+const sequelize = new Sequelize(
+  process.env.DB,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_DIALECT,
+    // logging: false,
+    // operatorsAliases: false,
+    pool: {
+      max: parseInt(process.env.DB_POOL_MAX, 10),
+      acquire: process.env.DB_POOL_ACQUIRE,
+      idle: process.env.DB_POOL_IDLE,
+    },
+  }
+);
+*/
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
