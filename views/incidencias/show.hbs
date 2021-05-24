@@ -94,15 +94,17 @@
             </button>
           </td>
         </tr>
-        <tr>
-          <td>
+        {{#if this.file_path}}
+          <tr>
+            <td>
 
-          </td>
-          <td>
+            </td>
+            <td>
 
-            <img src='{{this.file_path}}' alt='' width='100%' height='100%' />
-          </td>
-        </tr>
+              <img src='{{this.file_path}}' alt='' width='100%' height='100%' />
+            </td>
+          </tr>
+        {{/if}}
       {{/each}}
     </table>
 

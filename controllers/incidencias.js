@@ -68,6 +68,7 @@ const indice = async (req, res) => {
           incidencia_id: elementDB.dataValues.incidencia_id,
           descripcion: elementDB.dataValues.descripcion,
           solucion: elementDB.dataValues.solucion ? 'Sí' : 'No',
+          file_path: elementDB.dataValues.file_path,
           created_at: elementDB.dataValues.created_at.toLocaleDateString(),
           updated_at: elementDB.dataValues.updated_at.toLocaleDateString(),
         });

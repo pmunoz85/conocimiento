@@ -16,5 +16,3 @@ drop database conocimiento_development;
 
 create database conocimiento_development;
 
-sudo -i -u postgres 
-psql conocimiento_development

@@ -16,3 +16,9 @@ echo fs.inotify.max_user_watches=582222 | sudo tee -a /etc/sysctl.conf && sudo s
 heroku addons:create heroku-postgresql:hobby-dev
 heroku pg:psql
 heroku config
+
+
+///////////
+sudo -i -u postgres 
+psql conocimiento_development
+alter user postgres with password ‘passwd’;
